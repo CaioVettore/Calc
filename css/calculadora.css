@@ -1,0 +1,43 @@
+/*propriedades da Principal caixa da calculadora*/
+.divPrincipal{
+    text-align: center;
+    background-color: rgb(67, 9, 114);
+   margin: 0% auto;
+    width: 400px;
+    border-radius: 12px;
+}
+/*Margem de cima*/
+.margem5{
+   margin-top: 5px;
+}
+/*Margem dos Botões para o visor baixo*/
+.margem10{
+    margin-top: 10px;
+ }
+ /*Botões*/
+ .tamanhoBtn{
+     width: 50px;
+     height: 30px;
+     font-size: 20px;
+     background-color: rgb(255, 255, 255)
+ }
+ /*Tamanho e cor*/
+.visorTamanho{
+    text-align: center;
+    width: 250px;
+    height: 20px;
+    font-size: 24px;
+    background-color:white;
+    border-radius: 10px;
+    
+}
+/*Fonte da escrita da Calculadora*/
+.fonteCor{
+    font-size: 55px;
+    color:white;
+    font-family: cursive;
+}
+/*Margem de roda Pé*/
+.rodape{
+    margin-bottom: 40px;
+}

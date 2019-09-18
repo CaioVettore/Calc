@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/calculadora.css">
+</head>
+
+<body>
+
+    <div class="divPrincipal">
+
+        <p class="fonteCor"> Calculadora </p>
+
+        <input class="visorTamanho" disabled type="text" id="visor" size="font-sizer: 20px">
+        <!--botoes da calc daqui para baixo, -->
+        <div class="margem10">
+
+            <input type="button" class="tamanhoBtn" name="4" value="4" onclick="pressionado(4)">
+            <input type="button" class="tamanhoBtn" name="5" value="5" onclick="pressionado(5)">
+            <input type="button" class="tamanhoBtn" name="6" value="6" onclick="pressionado(6)">
+            <input type="button" class="tamanhoBtn" name="mult" value="x" onclick="operacao('*')">
+        </div>
+        <div class="margem5">
+
+            <input type="button" class="tamanhoBtn" name="7" value="7" onclick="pressionado(7)">
+            <input type="button" class="tamanhoBtn" name="8" value="8" onclick="pressionado(8)">
+            <input type="button" class="tamanhoBtn" name="9" value="9" onclick="pressionado(9)">
+            <input type="button" class="tamanhoBtn" name="sub" value="-" onclick="operacao('-')">
+
+            <div>
+                <input type="button" class="tamanhoBtn" name="1" value="1" onclick="pressionado(1)">
+                <input type="button" class="tamanhoBtn" name="2" value="2" onclick="pressionado(2)">
+                <input type="button" class="tamanhoBtn" name="3" value="3" onclick="pressionado(3)">
+                <input type="button" class="tamanhoBtn" name="divi" value="/" onclick="operacao('/')">
+            </div>
+            <div class="margem5 rodape">
+                <input type="button" class="tamanhoBtn" name="correcao" value="C" onclick="limpa()">
+                <input type="button" class="tamanhoBtn" name="0" value="0" onclick="pressionado(0)">
+                <input type="button" class="tamanhoBtn" name="Soma" value="+" onclick="operacao('+')">
+                <input type="button" class="tamanhoBtn" name="resultado" onclick="resultado()" value="=">
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    
+    <script src="js/calc.js"></script>
+
+</body>
+
+
+</html>
