@@ -12,12 +12,14 @@
     width: 75px;
     font-size: 13px;
     background-color: white;
+    text-align: center;
         
 }
 .fonte{
     font-size: 18px;
     color: black;
     text-align: center;
+    
 }
 .divPrincipal{
     text-align: center;

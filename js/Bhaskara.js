@@ -1,10 +1,15 @@
-var a = document.getElementById('visorA');
-var b = document.getElementById('visorB');
-var c = document.getElementById('visorC');
-var result = document.getElementById('visorResult');;
+var visorA = document.getElementById('visorA');
+var visorB = document.getElementById('visorB');
+var visorC = document.getElementById('visorC');
+var result = document.getElementById('visorResult');
 
-function result() {
+function resultado(){
 
-    result = ((b * b) - 4 * a * (c));
+    var cont1 = eval(visorA.value * visorA.value);
+    var cont2 = eval(cont1 - 4 * visorA.value * (visorC.value));
+   
 
+   result.value = cont2;
+    
+    
 }
