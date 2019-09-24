@@ -46,9 +46,13 @@ function Dados(url){
     var peso = retorno.mass;
     var cabelo = retorno.hair_color;
     var cor_da_pele = retorno.skin_color;
+    var cor_Olhos = retorno.eye_color;
+    var birth_year = retorno.birth_year;
+ 
+    
 
         
-    html = html + nome +" "+ altura +" " + peso +" " + cabelo +" " + cor_da_pele;
+    html = html + nome +" "+ altura +" " + peso +" " + cabelo +" " + cor_da_pele + " " + cor_Olhos;
     document.getElementById("detalhesusu").innerHTML = html;
       
 }
