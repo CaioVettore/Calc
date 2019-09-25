@@ -41,12 +41,23 @@ function Dados(url) {
     
     var html = "";
 
+<<<<<<< HEAD
     var filmes = [];
 
  
 
     
 
+=======
+    var nome = retorno.name;
+    var altura = retorno.height;
+    var peso = retorno.mass;
+    var cabelo = retorno.hair_color;
+    var cor_da_pele = retorno.skin_color;
+    var cor_Olhos = retorno.eye_color;
+    var birth_year = retorno.birth_year;
+ 
+>>>>>>> 6051a5ed06c66421c101a1172aa88dfb5c5bee8e
     
 
     html = html + "<a ("+urlusuario+")>" 
@@ -56,6 +67,10 @@ function Dados(url) {
     +"<br>"+ "Hair color: "+ retorno.hair
     +"<br>"+ "Skin color: "+ retorno.skin_color +"</a><br>"
         
+<<<<<<< HEAD
+=======
+    html = html + nome +" "+ altura +" " + peso +" " + cabelo +" " + cor_da_pele + " " + cor_Olhos;
+>>>>>>> 6051a5ed06c66421c101a1172aa88dfb5c5bee8e
     document.getElementById("detalhesusu").innerHTML = html;
 
 }
