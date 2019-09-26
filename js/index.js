@@ -4,26 +4,37 @@ function fazerRequisicao() {
 
     var xhttp = new XMLHttpRequest();
 
-    xhttp.open("GET", url, false);
+    xhttp.open("GET", url, true);
 
-    xhttp.send();//a execução do script pára aqui até a requi
+    xhttp.onload = function (e) {//a execução do script pára aqui até a requi
 
-    var retorno = JSON.parse(xhttp.responseText);
- ;
+        //var primeiroNome = retorno.results[1].name;
+        //document.getElementById("nome1").textContent = primeiroNome;
 
-    //var primeiroNome = retorno.results[1].name;
-    //document.getElementById("nome1").textContent = primeiroNome;
-    var html = "";
-    for (var i = 0; i < retorno.results.length; i++) {
-        var nome = retorno.results[i].name;
-        urlusuario = retorno.results[i].url;
-        // html = html + '<a href="#" onclick="fazerRequisicao"('+url+');"<br>";
-        html = html + "<a href='#' onclick=Dados('" + urlusuario + "')>" + nome + "</a><br>"
+        if (xhttp.readyState === 4) {
+            if (xhttp.status === 200) {
+                var retorno = JSON.parse(xhttp.responseText);
+                var html = "";
+                for (var i = 0; i < retorno.results.length; i++) {
+                    var nome = retorno.results[i].name;
+                    urlusuario = retorno.results[i].url;
+                    // html = html + '<a href="#" onclick="fazerRequisicao"('+url+');"<br>";
+                    html = html + "<a href='#' onclick=Dados('" + urlusuario + "')>" + nome + "</a><br>";
+                }
+                document.getElementById("usuarios").innerHTML = html;
+            }
+            else {
+                console.error(xhttp.statusText);
+            }
+        }
+    };
+    xhttp.send();
+    console.log('Teste');
 
-    }
-    document.getElementById("usuarios").innerHTML = html;
 
 }
+
+var a = [];
 
 function Dados(url) {
 
@@ -38,55 +49,39 @@ function Dados(url) {
     xhttp.send();//a execução do script pára aqui até a requi
 
     var retorno = JSON.parse(xhttp.responseText);
-    
+
+
+
     var html = "";
+   
+   var meusFilmes = [];
 
-    var filmes = [];
+    html = html + "<a (" + urlusuario + ")>"
+        + "<br>" + "Name: " + retorno.name
+        + "<br>" + "Height: " + retorno.height
+        + "<br>" + "Mass: " + retorno.mass
+        + "<br>" + "Hair color: " + retorno.hair
+        + "<br>" + "Films: " + retorno.films
+        + "<br>" + "Skin color: " + retorno.skin_color + "</a><br>"
 
- 
-
-    
-
-    
-
-    html = html + "<a ("+urlusuario+")>" 
-    +"<br>"+ "Name: "+ retorno.name
-    +"<br>"+ "Height: "+ retorno.height
-    +"<br>"+ "Mass: "+ retorno.mass
-    +"<br>"+ "Hair color: "+ retorno.hair
-    +"<br>"+ "Skin color: "+ retorno.skin_color +"</a><br>"
-        
     document.getElementById("detalhesusu").innerHTML = html;
 
-}
-function Requisicao() {
-    var urlFilms = 'https://swapi.co/api/films/';
-
-    var xhttp = new XMLHttpRequest();
-
-    xhttp.open("GET", urlFilms, false);
-
-    xhttp.send();
-
-    var retorno = JSON.parse(xhttp.responseText);
-   
-
-    var html = "";
-    html = html + "<a ("+urlusuario+")>" 
-    +"<br>"+ "Title: "+ retorno.title
-    +"<br>"+ "Number : "+ retorno.episode_id
-    +"<br>"+ "Mass: "+ retorno.mass
-    +"<br>"+ "Hair color: "+ retorno.hair
-    +"<br>"+ "Skin color: "+ retorno.skin_color +"</a><br>"
-
-    for (var i = 0; i < retorno.results.length; i++) {
-        var count = retorno.results[i].title;
-        var urlFilms = retorno.results[i].url;
-        // html = html + '<a href="#" onclick="fazerRequisicao"('+url+');"<br>";
-        html = html + "<a href='#' onclick=Dados('" + urlFilms + "')>" + count + "</a><br>"
-
+    
+    
+    
+    for (var i = 0; i < retorno.films.length; i++) {
+        meusFilmes.push(retorno.films[i]);
+        console.log(meusFilmes);
     }
-    document.getElementById("films").innerHTML = html;
+
+    alert(meusFilmes[1]);
+  
+
+    // for (var i = 0; i < retorno.filme.length; i++) {
+
+    //     var xhttp = new XMLHttpRequest();
+    //     xhttp.open("GET", url, true);
 
 
+    // }
 }
