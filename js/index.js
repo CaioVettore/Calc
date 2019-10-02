@@ -1,6 +1,6 @@
 function fazerRequisicao() {
 
-    var url = 'https://swapi.co/api/people/';
+    const url = 'http://localhost:3000/';
 
     var xhttp = new XMLHttpRequest();
 
@@ -53,29 +53,29 @@ function Dados(url) {
 
 
     var html = "";
-   
-   var meusFilmes = [];
+
+    var meusFilmes = [];
 
     html = html + "<a (" + urlusuario + ")>"
         + "<br>" + "Name: " + retorno.name
         + "<br>" + "Height: " + retorno.height
         + "<br>" + "Mass: " + retorno.mass
         + "<br>" + "Hair color: " + retorno.hair
-        + "<br>" + "Films: " + retorno.films
-        + "<br>" + "Skin color: " + retorno.skin_color + "</a><br>"
+        + "<br>" + "Skin color: " + retorno.skin_color + "</br>"
+        + "<br>" + "Films: " + retorno.films + "</a><br>"
 
     document.getElementById("detalhesusu").innerHTML = html;
 
-    
-    
-    
-    for (var i = 0; i < retorno.films.length; i++) {
-        meusFilmes.push(retorno.films[i]);
-        console.log(meusFilmes);
-    }
 
-    alert(meusFilmes[1]);
-  
+
+
+    // for (var i = 0; i < retorno.films.length; i++) {
+    //     meusFilmes.push(retorno.films[i]);
+    //     console.log(meusFilmes);
+    // }
+
+    // alert(meusFilmes[1]);
+
 
     // for (var i = 0; i < retorno.filme.length; i++) {
 
@@ -84,4 +84,43 @@ function Dados(url) {
 
 
     // }
+}
+function request(){
+
+    var a = document.getElementById("a").value;
+    var b = document.getElementById("b").value;
+    var result = a + b;
+    $.ajax({
+        url: "http://localhost:3000/",
+        type: "POST",
+        data: {
+         'a': a,
+         'b':b
+        },
+        success: function( result ) {
+          alert(result);
+        }
+      });
+}
+
+function urlNome() {
+    var url1 = 'http://localhost:3000';
+
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.open("GET", url1, false);
+
+    xhttp.send();//a execução do script pára aqui até a requi
+
+    var retorno = JSON.parse(xhttp.responseText);
+    console.log(xhttp.responseText)
+
+    var html = "";
+
+    html = html + "<a ('"+ url1 +"')>" + retorno.nome +"</a><br>";
+
+
+    document.getElementById("nome1").innerHTML = html;
+
+
 }
